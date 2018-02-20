@@ -79,7 +79,7 @@ class WarriorSearch:
 										i.successors.appead((j, tuple[2]))
 										j.successors.appead((i, tuple[2]))
 
-										
+
 	def set_start_node(self):
 		return self.start_node
 	def set_goal_node(self):
@@ -88,7 +88,7 @@ class WarriorSearch:
 
 		print("Open List: ", open_list)
 	def generate_successor(startNode):
-	
+		return None
 	def main():
 		return None
 
