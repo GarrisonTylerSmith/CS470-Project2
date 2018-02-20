@@ -4,6 +4,7 @@ from .SearchNode import SearchNode
 
 class WarriorSearch:
 
+	# intial global variable used later
 	graph = []
 	open_list = []
 	nodes_found = []
@@ -13,7 +14,7 @@ class WarriorSearch:
 	def __init__(self, graph):
 		self.graph = graph
 
-
+	# loads the graph into display
 	def load_graph(self):
 
 		# list of nodes on the graph
@@ -79,14 +80,19 @@ class WarriorSearch:
 										i.successors.append((j, tuple[2]))
 										j.successors.append((i, tuple[2]))
 
-
+	# gets the start of the first node									
 	def set_start_node(self):
 		return self.start_node
+	# gets the goal node
 	def set_goal_node(self):
 		return self.goal_node
+
+	# shows the open list of traversed nodes
 	def show_open_list():
 
 		print("Open List: ", open_list)
+
+	# gets all teh successor nodes
 	def generate_successor(self, startNode):
 		self.successor_array = []
 
@@ -96,21 +102,24 @@ class WarriorSearch:
 
 		self.successor_array.sort(key = lambda c: c.label)
 
+		# prints out each successor node it finds
 		for i in self.successor_array:
 			print("Successor: %s with value %d" % (i.label, i.value))
 
+	# inserts node into the open list 
 	def insert_into_open_list(self, type):
 
+		# checks for front type insert
 		if type == "front":
 			for i in self.successor_array:
 				if i not in self.open_list:
 					self.open_list.insert(0,i)
-
+		# checks for back type insert
 		elif type == "back":
 			for i in self.successor_array:
 				if i not in self.open_list:
 					self.open_list.append(i)
-
+		# checks for order tyep insert
 		elif type == "order":
 			for i in self.successor_array:
 				if i not in slef.open_list:
