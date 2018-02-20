@@ -1,5 +1,6 @@
-from Graphs import GraphViz
+from Graphs import *
 from .SearchNode import SearchNode
+
 
 
 class WarriorSearch:
